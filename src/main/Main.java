@@ -20,6 +20,7 @@ public class Main {
 		System.out.println("Máxima: "+ TemperaturaService.getInstance().temperaturaMax());
 		System.out.println("Mínima: "+ TemperaturaService.getInstance().TemperaturaMin());
 		System.out.println("Promedio "+TemperaturaService.getInstance().promedio());
+		System.out.println("Temperaturas bajo 0°: "+TemperaturaService.getInstance().temperaturasBajo0());
 	}
 	
 	public void EjemploNodo() {
