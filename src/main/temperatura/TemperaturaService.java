@@ -47,4 +47,14 @@ public class TemperaturaService {
 		}
 		return temperaturaMinima;
 	}
+	
+	public double promedio() {
+		double grados=0;
+		int z=0;
+		for (int i = 0; i < listaSimple.size; i++) {
+			Temperatura temperatura=(Temperatura)listaSimple.get(i);
+			grados+=temperatura.getTemperatura();z++;
+		}
+		return grados/z;
+	}
 }

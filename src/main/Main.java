@@ -19,6 +19,7 @@ public class Main {
 		new MockTemperatura().setData();
 		System.out.println("Máxima: "+ TemperaturaService.getInstance().temperaturaMax());
 		System.out.println("Mínima: "+ TemperaturaService.getInstance().TemperaturaMin());
+		System.out.println("Promedio "+TemperaturaService.getInstance().promedio());
 	}
 	
 	public void EjemploNodo() {
