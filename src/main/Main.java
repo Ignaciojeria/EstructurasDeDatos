@@ -1,13 +1,24 @@
 package main;
 
+import main.colegio.Alumno;
+import main.colegio.AlumnoService;
 import main.lista.ListaSimple;
 import main.nodo.Nodo;
+import main.temperatura.MockTemperatura;
+import main.temperatura.TemperaturaService;
 
 public class Main {
 
 	public static void main(String[] args) {
 	//exampleNodo ->new Main().EjemploNodo();
-	 new Main().EjemploListaSimple();
+	// exampleAlumno -> new Main().ejemploAlumno();
+	new Main().ejemploTemperaTura();
+	}
+	
+	public void ejemploTemperaTura() {
+		new MockTemperatura().setData();
+		System.out.println("Máxima: "+ TemperaturaService.getInstance().temperaturaMax());
+		System.out.println("Mínima: "+ TemperaturaService.getInstance().TemperaturaMin());
 	}
 	
 	public void EjemploNodo() {
@@ -18,6 +29,15 @@ public class Main {
 		System.out.println(nodo.siguiente.valor);
 		System.out.println(nodo.siguiente.siguiente.valor);
 	}
+	
+	public void ejemploAlumno() {
+		AlumnoService alumnoService=AlumnoService.getInstance();
+		alumnoService.addAlumno(new Alumno("Ignacio","18666636-4"));
+		alumnoService.addAlumno(new Alumno("lucia","18736748-2"));
+		alumnoService.addAlumno(new Alumno("jhon","19328490-5"));
+		alumnoService.listar();
+	}
+	
 	public void EjemploListaSimple() {
 		ListaSimple listaSimple= new ListaSimple();
 		listaSimple.addDer("1");

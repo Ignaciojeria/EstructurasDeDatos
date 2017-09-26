@@ -23,13 +23,13 @@ public class ListaSimple {
 	if(!setCabezaIfIsEmpty(valor)){
 		ultimo.siguiente=new Nodo(valor);
 		ultimo=ultimo.siguiente; size++;
-	}
-	}
+	}}
+	
 	public void addIzq(Object valor) {
 		if(!setCabezaIfIsEmpty(valor)){
 			Nodo nuevo= new Nodo(valor);
 			nuevo.siguiente=cabeza;
-			cabeza=nuevo;
+			cabeza=nuevo;size++;
 		}
 	}
 	
