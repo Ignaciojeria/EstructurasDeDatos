@@ -1,5 +1,10 @@
 package main;
 
+import main.celular.Celular;
+import main.celular.ClienteCelular;
+import main.celular.ClienteCelularService;
+import main.celular.CompaniaTelefonica;
+import main.celular.MockClienteCelular;
 import main.colegio.Alumno;
 import main.colegio.AlumnoService;
 import main.lista.ListaSimple;
@@ -12,10 +17,20 @@ public class Main {
 	public static void main(String[] args) {
 	//exampleNodo ->new Main().EjemploNodo();
 	// exampleAlumno -> new Main().ejemploAlumno();
-	new Main().ejemploTemperaTura();
+	//exampleTemperatura-> new Main().ejemploTemperaTura();
+		new Main().ejemploCelular();
+		
 	}
 	
-	public void ejemploTemperaTura() {
+	//las clases de Este Ejemplo están más acompladas que la conchetumadre.No programes así por ningún motivo en la rial life.
+	private void ejemploCelular() {
+		new MockClienteCelular().initData();
+		CompaniaTelefonica compania=new CompaniaTelefonica(ClienteCelularService.getInstance().findAll(),7);
+		ClienteCelularService.getInstance().add(new ClienteCelular("12351233-2","Bastian",12,'M',true,new Celular(1823949,"Samsung")));
+	}
+	
+	
+	private void ejemploTemperaTura() {
 		new MockTemperatura().setData();
 		System.out.println("Máxima: "+ TemperaturaService.getInstance().temperaturaMax());
 		System.out.println("Mínima: "+ TemperaturaService.getInstance().TemperaturaMin());
@@ -23,7 +38,7 @@ public class Main {
 		System.out.println("Temperaturas bajo 0°: "+TemperaturaService.getInstance().temperaturasBajo0());
 	}
 	
-	public void EjemploNodo() {
+	private void EjemploNodo() {
 		Nodo nodo= new Nodo("object 1");
 		nodo.siguiente=new Nodo("object 2");
 		nodo.siguiente.siguiente=new Nodo("object 3");
@@ -32,7 +47,7 @@ public class Main {
 		System.out.println(nodo.siguiente.siguiente.valor);
 	}
 	
-	public void ejemploAlumno() {
+	private void ejemploAlumno() {
 		AlumnoService alumnoService=AlumnoService.getInstance();
 		alumnoService.addAlumno(new Alumno("Ignacio","18666636-4"));
 		alumnoService.addAlumno(new Alumno("lucia","18736748-2"));
@@ -40,7 +55,7 @@ public class Main {
 		alumnoService.listar();
 	}
 	
-	public void EjemploListaSimple() {
+	private void EjemploListaSimple() {
 		ListaSimple listaSimple= new ListaSimple();
 		listaSimple.addDer("1");
 		listaSimple.addDer("2");
