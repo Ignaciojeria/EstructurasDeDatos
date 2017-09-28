@@ -9,6 +9,7 @@ import main.colegio.Alumno;
 import main.colegio.AlumnoService;
 import main.lista.ListaSimple;
 import main.nodo.Nodo;
+import main.pila.Pila;
 import main.temperatura.MockTemperatura;
 import main.temperatura.TemperaturaService;
 
@@ -18,8 +19,31 @@ public class Main {
 	//exampleNodo ->new Main().EjemploNodo();
 	// exampleAlumno -> new Main().ejemploAlumno();
 	//exampleTemperatura-> new Main().ejemploTemperaTura();
-		new Main().ejemploCelular();
+	//new Main().ejemploCelular();
+		new Main().ejemploPila();
 		
+	}
+	
+	private void ejemploPila() {
+        Pila pila=new Pila();
+        pila.push(1);
+        pila.push(2);
+        pila.push(3);
+        pila.push(4);
+        pila.push(5);
+        pila.listarPila();
+        
+        System.out.println("---peek---");
+        System.out.println("peek cima:"+pila.peek());
+        System.out.println("no borra el valor de la cima. Sólo lo muestra");
+        pila.listarPila();
+        System.out.println("----Pop----");
+        System.out.println("pop cima: "+pila.pop());
+        System.out.println("muestra y borra el valor de la cima");
+        pila.listarPila();
+        System.out.println("---clear---");
+        pila.clear();
+        pila.listarPila();
 	}
 	
 	//las clases de Este Ejemplo están más acompladas que la conchetumadre.No programes así por ningún motivo en la rial life.
